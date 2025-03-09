@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Ring Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        @keyframes animate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes animate2 {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .ring {
+            position: relative;
+            width: 600px; /* Increased width for the ring */
+            height: 600px; /* Increased height for the ring */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ring i {
+            position: absolute;
+            inset: 0;
+            border: 2px solid #fff;
+            transition: 0.5s;
+        }
+        .ring i:nth-child(1) {
+            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            animation: animate 6s linear infinite;
+        }
+        .ring i:nth-child(2) {
+            border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+            animation: animate 4s linear infinite;
+        }
+        .ring i:nth-child(3) {
+            border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+            animation: animate2 10s linear infinite;
+        }
+        .ring:hover i {
+            border: 6px solid var(--clr);
+            filter: drop-shadow(0 0 20px var(--clr));
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-900 overflow-hidden">
+
+    <div class="ring relative">
+        <i style="--clr:#00ff0a;"></i>
+        <i style="--clr:#ff0057;"></i>
+        <i style="--clr:#fffd44;"></i>
+
+        <div class="absolute flex flex-col justify-center items-center gap-5">
+            <h2 class="text-2xl text-white">Login</h2>
+            <form action="/login" method="POST" class="w-72"> <!-- Set a fixed width for the form -->
+                <div class="relative w-full mb-4">
+                    <input type="text" name="username" placeholder="Username" required class="w-full p-3 bg-transparent border-2 border-white rounded-full text-white placeholder-opacity-75 focus:outline-none" />
+                </div>
+                <div class="relative w-full mb-4">
+                    <input type="password" name="password" placeholder="Password" required class="w-full p-3 bg-transparent border-2 border-white rounded-full text-white placeholder-opacity-75 focus:outline-none" />
+                </div>
+                <div class="relative w-full">
+                    <input type="submit" value="Submit" class="w-full p-3 bg-gradient-to-r from-pink-500 to-yellow-300 rounded-full cursor-pointer" />
+                </div>
+            </form>
+            <div class="relative w-full flex items-center justify-between px-5">
+                <a href="#" class="text-white">Forget Password</a>
+                <a href="signup.html" class="text-white">Signup</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

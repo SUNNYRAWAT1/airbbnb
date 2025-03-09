@@ -1,0 +1,23 @@
+{
+  "name": "another-testing-file",
+  "version": "1.0.0",
+  "main": "routes/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node routes/main.js",
+    "dev": "nodemon routes/main.js"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "description": "A simple Express application for house rental.",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.2.4"
+  },
+  "keywords": []
+}
